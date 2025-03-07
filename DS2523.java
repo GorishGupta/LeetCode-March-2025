@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+import java.util.Scanner;
 public class DS2523 {
     class Solution {
     private boolean[] sieve(int n) {
@@ -43,8 +43,9 @@ public class DS2523 {
     }
 }
 public static void main(String[] args) {
-    int left = 10;
-    int right = 19;
+Scanner sc= new Scanner(System.in);
+    int left = sc.nextInt();
+    int right = sc.nextInt();
     DS2523 obj = new DS2523();
     Solution sol = obj.new Solution();
     int arr[] = sol.closestPrimes(left, right);
