@@ -42,4 +42,14 @@ public class DS2523 {
         return new int[] {num1, num2};
     }
 }
+public static void main(String[] args) {
+    int left = 10;
+    int right = 19;
+    DS2523 obj = new DS2523();
+    Solution sol = obj.new Solution();
+    int arr[] = sol.closestPrimes(left, right);
+    for(int i=0;i<arr.length;i++){
+        System.out.print(arr[i]+" ");
+    }
+}
 }
