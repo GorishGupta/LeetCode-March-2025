@@ -54,4 +54,11 @@ class Solution {
         }
         return ans;
     }
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        String word = "aeiou";
+        int k = 2;
+        long num = sol.countOfSubstrings(word,k);
+        System.out.println(num);
+    }
 }
