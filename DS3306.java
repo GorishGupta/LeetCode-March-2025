@@ -1,7 +1,6 @@
 class Solution {
     public long countOfSubstrings(String word, int k) {
         return kConstants(word,k)-kConstants(word,k+1);
-        
     }
     long kConstants(String w, int k){
         int l=0;
@@ -12,10 +11,7 @@ class Solution {
         int i=0;
         int o=0;
         int u=0;
-
         int cont=0;
-
-
       long ans=0;
         while(r<n || l<n){
             
@@ -36,7 +32,6 @@ class Solution {
                 else
                     cont--;
                 l++;
-
             }
             else{
                 if(r==n)
@@ -58,6 +53,5 @@ class Solution {
             }          
         }
         return ans;
-
     }
 }
