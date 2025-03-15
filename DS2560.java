@@ -3,9 +3,7 @@ public class DS2560 {
         if (nums == null || nums.length == 0) {
             return 0; 
         }
-
         int min = nums[0], max = nums[0];
-
         for (int n : nums) {
             min = Math.min(min, n);
             max = Math.max(max, n); 
