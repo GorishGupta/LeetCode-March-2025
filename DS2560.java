@@ -37,5 +37,7 @@ public class DS2560 {
         return count; 
     }
 }
+// Test cases to validate the solution
+// Test case 1: nums = [1, 2, 3, 4, 5], k = 2
 // Time Complexity: O(nlogn)
 // Space Complexity: O(1)
