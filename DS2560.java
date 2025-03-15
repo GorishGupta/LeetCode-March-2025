@@ -12,7 +12,6 @@ public class DS2560 {
         int left = min, right = max; 
         while (left < right) {
             int mid = left + (right - left) / 2; 
-
             int take = countTake(nums, mid);
             if (take >= k) {
                 right = mid; 
@@ -20,12 +19,8 @@ public class DS2560 {
                 left = mid + 1; 
             }
         }
-
-        // left == right 
-        
         return left; 
     }
-
     // steal house refusing the steal from adjacent homes. 
     private int countTake(int[] arr, int mid) {
         int count = 0;
