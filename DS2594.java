@@ -21,4 +21,7 @@ public class DS2594 {
             }
             return left;
         }   
+        public static void main(String[] args) {
+            
+        }
 }
