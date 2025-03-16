@@ -22,6 +22,9 @@ public class DS2594 {
             return left;
         }   
         public static void main(String[] args) {
-            
+            DS2594 obj = new DS2594();
+            int[] ranks = {1, 2, 3, 4, 5};
+            int cars = 2;
+            System.out.println(obj.repairCars(ranks, cars)); // Output: 3
         }
 }
