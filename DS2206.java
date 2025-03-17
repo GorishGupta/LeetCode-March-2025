@@ -12,4 +12,11 @@ public class DS2206 {
         }
         return true;
     }
+
+    public static void main(String args[]){
+        DS2206 obj = new DS2206();
+        int [] nums = {3,2,3,2,2,2};
+        System.out.println(obj.divideArray(nums));
+        
+    }
 }
