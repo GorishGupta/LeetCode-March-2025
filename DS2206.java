@@ -1,3 +1,4 @@
+import java.util.*;
 import java.util.HashMap;
 public class DS2206 {
     public boolean divideArray(int [] nums){
@@ -16,8 +17,13 @@ public class DS2206 {
     // Test case 1: nums = [3, 2, 3, 2, 2, 2]
     // Output: true
     public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
         DS2206 obj = new DS2206();
-        int [] nums = {3,2,3,2,2,2};
+        int num = sc.nextInt();
+        int [] nums = {};
+        for(int i=0;i<num;i++){
+            nums[i] = sc.nextInt();
+        }
         System.out.println(obj.divideArray(nums));
 
     }
