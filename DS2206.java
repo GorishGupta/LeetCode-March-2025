@@ -12,11 +12,13 @@ public class DS2206 {
         }
         return true;
     }
-
+    // Test cases to validate the solution
+    // Test case 1: nums = [3, 2, 3, 2, 2, 2]
+    // Output: true
     public static void main(String args[]){
         DS2206 obj = new DS2206();
         int [] nums = {3,2,3,2,2,2};
         System.out.println(obj.divideArray(nums));
-        
+
     }
 }
