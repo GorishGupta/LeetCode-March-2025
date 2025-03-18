@@ -12,7 +12,7 @@ class Solution {
                 left = middle;
             } else {
                 right = middle - 1;
-            }
+            } 
         }
         return left;
     }
