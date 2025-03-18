@@ -23,5 +23,6 @@ public class DS2401 {
         int [] nums = {2,4,3,3,3,2,4,2,1};
         System.out.println(sol.longestNiceSubarray(nums));
         
+
     }
 }
