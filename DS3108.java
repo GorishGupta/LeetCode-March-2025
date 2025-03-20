@@ -1,0 +1,57 @@
+public class DS3108 {
+    class Solution {
+        private int findRoot(int[] parent, int node) {
+            if (parent[node] != node) {
+                parent[node] = findRoot(parent, parent[node]);
+            }
+            return parent[node];
+        }
+    
+        public int[] minimumCost(int n, int[][] edges, int[][] query) {
+            int[] parent = new int[n];
+            int[] minPathCost = new int[n];
+            Arrays.fill(minPathCost, -1);
+    
+            for (int i = 0; i < n; i++) {
+                parent[i] = i;
+            }
+    
+            for (int[] edge : edges) {
+                int source = edge[0], target = edge[1], weight = edge[2];
+                int sourceRoot = findRoot(parent, source);
+                int targetRoot = findRoot(parent, target);
+    
+                minPathCost[targetRoot] &= weight;
+    
+                if (sourceRoot != targetRoot) {
+                    minPathCost[targetRoot] &= minPathCost[sourceRoot];
+                    parent[sourceRoot] = targetRoot;
+                }
+            }
+    
+            int[] result = new int[query.length];
+            for (int i = 0; i < query.length; i++) {
+                int start = query[i][0], end = query[i][1];
+                if (start == end) {
+                    result[i] = 0;
+                } else if (findRoot(parent, start) != findRoot(parent, end)) {
+                    result[i] = -1;
+                } else {
+                    result[i] = minPathCost[findRoot(parent, start)];
+                }
+            }
+            return result;
+        }
+    }
+    public static void main(String[] args) {
+        DS3108 obj = new DS3108();
+        Solution sol = obj.new Solution();
+        // Test case 1
+        int n = 5;
+        int[][] edges = {{0,1,10},{1,2,10},{2,3,10},{3,4,10}};
+        int[][] query = {{0,4},{4,0},{1,3},{3,1}};
+        System.out.println(sol.minimumCost(n, edges, query));
+        
+
+    }
+}
