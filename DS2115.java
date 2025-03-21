@@ -61,9 +61,19 @@ public class DS2115 {
                 q.add(k);
               }
            }
-    
            return ans;
+        }
+        public static void main(String[] args) {
+            DS2115 obj = new DS2115();
+            String[] recipes = {"apple pie", "apple tart", "apple crumble", "apple cobbler", "apple turnover"};
+            List<List<String>> ingredients = new ArrayList<>();
+            ingredients.add(Arrays.asList("apple", "flour", "sugar", "butter"));
+            ingredients.add(Arrays.asList("apple", "flour", "sugar", "butter"));
+            ingredients.add(Arrays.asList("apple", "flour", "sugar", "butter"));
+            ingredients.add(Arrays.asList("apple", "flour", "sugar", "butter"));
+            ingredients.add(Arrays.asList("apple", "flour", "sugar", "butter"));
+            String[] supplies = {"apple", "flour", "sugar", "butter"};
+            System.out.println(obj.findAllRecipes(recipes, ingredients, supplies));
             
         }
-    
-}
+    }
