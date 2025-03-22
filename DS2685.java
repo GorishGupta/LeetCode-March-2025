@@ -42,4 +42,12 @@ public class DS2685 {
     
         //each component of n nodes needs (n * (n - 1))/2 edges
     }
+    public static void main(String[] args) {
+        System.out.println("DS2685");
+        DS2685 obj = new DS2685();
+        DS2685.Solution sol = obj.new Solution();
+        int[][] edges = {{0, 1}, {1, 2}, {3, 4}};
+        System.out.println(sol.countCompleteComponents(5, edges));
+        
+    }
 }
