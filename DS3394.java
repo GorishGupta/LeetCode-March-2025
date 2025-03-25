@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class DS3394 {
+    class Solution {
+        public boolean checkValidCuts(int n, int[][] rectangles) {
+            int[][] xIntervals = new int[rectangles.length][2];
+            int[][] yIntervals = new int[rectangles.length][2];
+
+            for (int i = 0; i < rectangles.length; i++) {
+                xIntervals[i][0] = rectangles[i][0];
+                xIntervals[i][1] = rectangles[i][2];
+                yIntervals[i][0] = rectangles[i][1];
+                yIntervals[i][1] = rectangles[i][3];
+            }
+
+            return check(xIntervals) || check(yIntervals);
+        }
+
+        private boolean check(int[][] intervals) {
+            Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+
+            int sections = 0;
+            int maxEnd = intervals[0][1];
+
+            for (int[] interval : intervals) {
+                if (maxEnd <= interval[0]) {
+                    sections++;
+                }
+                maxEnd = Math.max(maxEnd, interval[1]);
+            }
+
+            return sections >= 2;
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("DS3394");
+        DS3394 obj = new DS3394();
+        int[][] rectangles = { { 0, 0, 1, 1 }, { 1, 0, 2, 1 }, { 0, 1, 1, 2 }, { 1, 1, 2, 2 } };
+        System.out.println(obj.new Solution().checkValidCuts(2, rectangles));
+    }
+}
