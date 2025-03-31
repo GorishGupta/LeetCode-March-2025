@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class DS2551 {
     class Solution {
         public long putMarbles(int[] weights, int k) {
